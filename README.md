@@ -16,14 +16,14 @@ serem utilizados em condições e filtros.
 
 ##### Exemplo de utilização no controller:
  ``` php
- public function index(Request \$request)
+ public function index(Request $request)
  {
-     \$conditions = \$request->get('conditions');
-     if (\$conditions) {
-         \$this->repository->selectConditions(\$conditions);
+     $conditions = $request->get('conditions');
+     if ($conditions) {
+         $this->repository->selectConditions($conditions);
      }
  
-     return \$this->repository->getResult();
+     return $this->repository->getResult();
  }
  ```
 
@@ -40,14 +40,14 @@ http://nomedosite/api/exemplo?conditions=name:like:$silva$;age:>:18
 
 ##### Exemplo de utilização no controller:
  ``` php
- public function index(Request \$request)
+ public function index(Request $request)
  {
-     \$fields = \$request->get('fields');
-     if (\$fields) {
-         \$this->repository->selectFilter(\$fields);
+     $fields = $request->get('fields');
+     if ($fields) {
+         $this->repository->selectFilter($fields);
      }
  
-     return \$this->repository->getResult();
+     return $this->repository->getResult();
  }
  ```
 
