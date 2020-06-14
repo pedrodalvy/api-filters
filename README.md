@@ -13,21 +13,21 @@ serem utilizados em condições e filtros.
 - Utilizar o metodo `selectConditions`, passando as condições no parâmetro.
 - O formato das condições devem seguir este exemplo: `age:>:18;name:like:%silva%`".
 - Para obter o retorno da consulta, deve ser utilizado o método `getResult`, que retornará a model com os dados buscados.
-<br/>
-Exemplo de utilização no controller: <br/>
-     ``` php
-     public function index(Request \$request)
-     {
-         \$conditions = \$request->get('conditions');
-         if (\$conditions) {
-             \$this->repository->selectConditions(\$conditions);
-         }
-     
-         return \$this->repository->getResult();
-     }
-     ```
 
-Exemplo de utilização na rota:
+##### Exemplo de utilização no controller:
+ ``` php
+ public function index(Request \$request)
+ {
+     \$conditions = \$request->get('conditions');
+     if (\$conditions) {
+         \$this->repository->selectConditions(\$conditions);
+     }
+ 
+     return \$this->repository->getResult();
+ }
+ ```
+
+##### Exemplo de utilização na rota:
 ```
 http://nomedosite/api/exemplo?conditions=name:like:$silva$;age:>:18
 ```
@@ -36,21 +36,22 @@ http://nomedosite/api/exemplo?conditions=name:like:$silva$;age:>:18
 - Utilizar o metodo `selectFilter`, passando as colunas no parâmetro.
 - O formato do filtro deve seguir o exemplo: `id,name,age`.
 - Para obter o retorno da consulta, deve ser utilizado o método `getResult`, que retornará a model com os dados buscados.
-<br/>
-Exemplo de utilização no controller: <br/>
-     ``` php
-     public function index(Request \$request)
-     {
-         \$fields = \$request->get('fields');
-         if (\$fields) {
-             \$this->repository->selectFilter(\$fields);
-         }
-     
-         return \$this->repository->getResult();
-     }
-     ```
 
-Exemplo de utilização na rota:
+
+##### Exemplo de utilização no controller:
+ ``` php
+ public function index(Request \$request)
+ {
+     \$fields = \$request->get('fields');
+     if (\$fields) {
+         \$this->repository->selectFilter(\$fields);
+     }
+ 
+     return \$this->repository->getResult();
+ }
+ ```
+
+##### Exemplo de utilização na rota:
 ```
 http://nomedosite/api/exemplo?filters=id,name,age
 ```
